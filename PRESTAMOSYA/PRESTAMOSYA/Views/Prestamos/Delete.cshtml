@@ -1,0 +1,91 @@
+﻿@model PRESTAMOSYA.Models.Prestamo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar</h2>
+
+<h3>Estas seguro de borraar esto?</h3>
+<div>
+    <h4>Prestamo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Monto_Aprobado)*@
+            Monto Aprobado 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monto_Aprobado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuotas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuotas)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Gastos_Cierre)*@
+            Gastos de cierre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gastos_Cierre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Interes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Interes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Garante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Garante)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Cliente.Nombre_Cliente)*@
+            Nombre DEL Ciente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre_Cliente)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Empleado.Nombre_Empleado)*@
+            Nombre del Empleado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Nombre_Empleado)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> 
+           
+        </div>
+        <div>
+
+
+            <nav aria-label="breadcrumb">
+                <a class="btn btn-default" href="~/Prestamos/Index">Volver</a>
+            </nav>
+        </div>
+    }
+</div>

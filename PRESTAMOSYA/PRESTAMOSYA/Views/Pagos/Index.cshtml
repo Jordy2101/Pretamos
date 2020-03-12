@@ -1,0 +1,82 @@
+﻿@model IEnumerable<PRESTAMOSYA.Models.Pago>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<div class="jumbotron">
+    <h1 class="display-2"><center>Registro de Pagos</center></h1>
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item " aria-current="page">
+            <a class="btn btn-default" href="~/Pagos/Create">Registrar Pago </a>
+        </li>
+    </ol>
+</nav>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.ID_Recibo)*@
+                ID del Recibo 
+            </th>
+            <th style="width:200px;">
+                @Html.DisplayNameFor(model => model.Monto)
+            </th>
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.Tipo_Pago)*@
+                Tipo de Pago
+            </th>
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.Fecha_Pago)*@
+                Fecha de Pago
+            </th>
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.Cliente.Nombre_Cliente)*@
+                Nombre del Cliente
+            </th>
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.Transaccion.ID_Transaccion)*@
+                ID de Transaccion
+            </th>
+            <th style="width:200px;"></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_Recibo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_Pago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Pago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nombre_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Transaccion.ID_Transaccion)
+            </td>
+            <td>
+           
+                <a href="~/Pagos/Edit/@item.ID_Pago" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
+                <a href="~/Pagos/Details/@item.ID_Pago" class="btn btn-info "><i class="glyphicon glyphicon-info-sign "></i> </a>
+                <a href="~/Pagos/Delete/@item.ID_Pago" class=" btn btn-danger"><i class=" glyphicon glyphicon-trash"></i> </a>
+
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="22dd0be1146a4a9d8f41477fcfe5082c" Name="Diagram1">
+        <EntityTypeShape EntityType="PRESTAMOSYAModel.Cliente" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRESTAMOSYAModel.Cuenta_Cobrar" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRESTAMOSYAModel.Empleado" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRESTAMOSYAModel.Pago" Width="1.5" PointX="5.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRESTAMOSYAModel.Prestamo" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRESTAMOSYAModel.Recibo" Width="1.5" PointX="8.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRESTAMOSYAModel.Solicitude" Width="1.5" PointX="3" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRESTAMOSYAModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PRESTAMOSYAModel.Transaccion" Width="1.5" PointX="3" PointY="24.125" IsExpanded="true" />
+        <AssociationConnector Association="PRESTAMOSYAModel.FK_Cuenta_Cobrar_Cliente1" ManuallyRouted="false" />
+        <AssociationConnector Association="PRESTAMOSYAModel.FK_Pagos_Cliente1" ManuallyRouted="false" />
+        <AssociationConnector Association="PRESTAMOSYAModel.FK_Prestamo_Cliente1" ManuallyRouted="false" />
+        <AssociationConnector Association="PRESTAMOSYAModel.FK_Recibo_Cliente1" ManuallyRouted="false" />
+        <AssociationConnector Association="PRESTAMOSYAModel.FK_Solicitudes_Cliente1" ManuallyRouted="false" />
+        <AssociationConnector Association="PRESTAMOSYAModel.FK_Transaccion_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="PRESTAMOSYAModel.FK_Prestamo_Empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="PRESTAMOSYAModel.FK_Pagos_Transaccion" ManuallyRouted="false" />
+        <AssociationConnector Association="PRESTAMOSYAModel.FK_Recibo_Transaccion" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

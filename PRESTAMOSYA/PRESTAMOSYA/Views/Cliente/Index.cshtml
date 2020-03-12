@@ -1,0 +1,104 @@
+﻿@model IEnumerable<PRESTAMOSYA.Models.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<div class="jumbotron">
+    <h1 class="display-2"><center>Registro de Cliente</center></h1>
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item " aria-current="page">
+            <a class="btn btn-default" href="~/Cliente/Create">Crear nuevo cliente</a>
+        </li>
+    </ol>
+</nav>
+
+<table class="table" >
+    <thead>  
+    <tr>
+        <th style="width:200px;"  >
+            @*@Html.DisplayNameFor(model => model.Nombre_Cliente)*@
+            Nombre del Cliente
+        </th>
+        <th style="width:200px;">
+            @*@Html.DisplayNameFor(model => model.NoCuenta)*@
+            Numero de Cuenta
+        </th>
+        <th style="width:200px;">
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th style="width:200px;">
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th style="width:200px;">
+            @Html.DisplayNameFor(model => model.Cedula)
+        </th>
+        <th style="width:200px;">
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th style="width:200px;">
+            @*@Html.DisplayNameFor(model => model.Forma_Pago)*@
+            Forma de Pago
+        </th>
+        <th style="width:200px;">
+            @*@Html.DisplayNameFor(model => model.Limite_Credito)*@
+            Limite de credito 
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th style="width:200px;">
+            @*@Html.DisplayNameFor(model => model.Correo_Electronico)*@
+            Correo Electronico
+        </th>
+        <th style="width:200px;"></th>
+    </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NoCuenta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Forma_Pago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Limite_Credito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo_Electronico)
+            </td>
+            <td>
+
+                <a href="~/Cliente/Edit/@item.ID_Cliente" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
+                <a href="~/Cliente/Details/@item.ID_Cliente" class="btn btn-info "><i class="glyphicon glyphicon-info-sign "></i> </a>
+                <a href="~/Cliente/Delete/@item.ID_Cliente" class=" btn btn-danger"><i class=" glyphicon glyphicon-trash"></i> </a>
+ 
+            </td>
+        </tr>
+    }
+
+</table>

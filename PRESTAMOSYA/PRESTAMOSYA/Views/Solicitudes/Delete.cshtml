@@ -1,0 +1,106 @@
+﻿@model PRESTAMOSYA.Models.Solicitude
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar</h2>
+
+<h3>Estas seguro de borrar esto?</h3>
+<div>
+    <h4>Solicitud</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Nombre_Solicitante)*@
+            Nombre del Solicitante
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Solicitante)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Cedula_Solicitante)*@
+            Cedula
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cedula_Solicitante)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Telefono_Solicitante)*@
+            Telefono
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono_Solicitante)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.tasa)*@
+            Tasa 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tasa)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.monto)*@
+            Monto
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.monto)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.plazo)*@
+            Plazo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.plazo)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Monto_Cuota)*@
+            Monto de la cuota 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monto_Cuota)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Correo_Electronico)*@
+            Correo Electronico 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Correo_Electronico)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> 
+          
+        </div>
+        <div>
+
+
+            <nav aria-label="breadcrumb">
+                <a class="btn btn-default" href="~/Solicitudes/Index">Volver</a>
+            </nav>
+
+
+        </div>
+    }
+</div>

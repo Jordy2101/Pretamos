@@ -1,0 +1,83 @@
+﻿@model IEnumerable<PRESTAMOSYA.Models.Prestamo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<div class="jumbotron">
+    <h1 class="display-2"><center>Registro de Prestamo</center></h1>
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item " aria-current="page">
+            <a class="btn btn-default" href="~/Prestamos/Create">Registrar Prestamo</a>
+        </li>
+    </ol>
+</nav>
+
+<table class="table">
+    <tr>
+        <th style="width:200px;">
+            @*@Html.DisplayNameFor(model => model.Monto_Aprobado)*@
+            Monto Aprobado
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cuotas)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Gastos_Cierre)*@
+            Gasto de Cierre
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tasa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Garante)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Cliente.Nombre_Cliente)*@
+            Nombre del Cliente
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Empleado.Nombre_Empleado)*@
+            Nombre del Empleado
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto_Aprobado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cuotas)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gastos_Cierre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tasa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Garante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nombre_Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empleado.Nombre_Empleado)
+            </td>
+            <td>
+
+                <a href="~/Prestamos/Edit/@item.ID_Prestamo" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
+                <a href="~/Prestamos/Details/@item.ID_Prestamo" class="btn btn-info "><i class="glyphicon glyphicon-info-sign "></i> </a>
+                <a href="~/Prestamos/Delete/@item.ID_Prestamo" class=" btn btn-danger"><i class=" glyphicon glyphicon-trash" </a>
+
+            </td>
+        </tr>
+    }
+
+</table>

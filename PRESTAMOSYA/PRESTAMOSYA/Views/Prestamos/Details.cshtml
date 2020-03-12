@@ -1,0 +1,144 @@
+﻿@model PRESTAMOSYA.Models.Prestamo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Prestamo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Monto_Aprobado)*@
+            Monto Aprobado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monto_Aprobado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuotas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuotas)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Gastos_Cierre)*@
+            Gastos de Cierre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gastos_Cierre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tasa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tasa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Garante)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Garante)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Cliente.Nombre_Cliente)*@
+            Nombre del Cliente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre_Cliente)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Empleado.Nombre_Empleado)*@
+            Nombre del Empleado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Empleado.Nombre_Empleado)
+        </dd>
+
+    </dl>
+</div>
+<h1>Tabla de amortizacion</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+
+            <th>Numero de cuotas</th>
+            <th>Interes mensual</th>
+            <th>Abono Capital </th>
+            <th>Cuota mensual </th>
+           <th>Capital pendiente </th>
+
+        </tr>
+    </thead>
+
+
+    @{
+        double capital = Convert.ToDouble(Model.Monto_Aprobado);
+        double interes = Convert.ToDouble(Model.Tasa);
+        double plazo = Convert.ToDouble(Model.Cuotas);
+
+
+        //Formula para generar las cuotas
+
+        //double cuota = capital * (interes / (double)(1 - Math.Pow(1 + (double)interes, -plazo)));
+
+        double interes_mensual = 0;
+        double Abonocapital = 0;
+        double cuotamensual = 0;
+        double capitalpendiente = 0;
+        int i = 1;
+
+        for (i = 1; i <= plazo; i++)
+        {
+            interes_mensual = Math.Round((((capital * (interes / 100) + capital) / plazo) - (capital / plazo)), 2);
+
+
+
+            cuotamensual = ((((capital * (interes / 100)) + capital)) / plazo);
+
+            Abonocapital = (capital / plazo);
+
+            capitalpendiente = Math.Round((capital - cuotamensual) / i, 2);
+
+            //  capitalpendiente = Math.Round(capital - cuotamensual, 2);
+
+            //capitalpendiente = Math.Round(capitalpendiente - cuotamensual + capital, 2);
+            <tbody>
+                <tr>
+
+                    <td>@i </td>
+                    <td>@Math.Round(interes_mensual, MidpointRounding.AwayFromZero)</td>
+                    <td>@Math.Round(Abonocapital, MidpointRounding.AwayFromZero)</td>
+                    <td>@Math.Round(cuotamensual, MidpointRounding.AwayFromZero)</td>
+                    <td>@Math.Round(capitalpendiente, MidpointRounding.AwayFromZero)</td>
+                </tr>
+            </tbody>
+        }
+    }
+</table>
+
+
+<p>
+
+    <a href="~/Prestamos/Edit/@Model.ID_Prestamo" class="btn btn-default"> Editar</a>
+
+    <nav aria-label="breadcrumb">
+        <a class="btn btn-default" href="~/Prestamos/Index">Volver</a>
+    </nav>
+</p>

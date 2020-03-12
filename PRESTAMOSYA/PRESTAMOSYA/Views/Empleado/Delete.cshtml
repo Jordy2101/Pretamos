@@ -1,0 +1,64 @@
+﻿@model PRESTAMOSYA.Models.Empleado
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar</h2>
+
+<h3>Estas seguro de borrar esto ?</h3>
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Nombre_Empleado)*@
+            Nombre del Empleado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Empleado)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Cedula_Empleado)*@
+            Cedula
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cedula_Empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contraseña)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contraseña)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> 
+         
+        </div>
+        <div>
+            <nav aria-label="breadcrumb">
+                <a class="btn btn-default" href="~/Empleados/Index">Volver</a>
+            </nav>
+
+        </div>
+    }
+</div>

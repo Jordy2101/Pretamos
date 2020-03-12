@@ -1,0 +1,95 @@
+﻿@model IEnumerable<PRESTAMOSYA.Models.Solicitude>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<br />
+<div class="jumbotron">
+    <h1 class="display-2"><center>Registro de Solicitudes</center></h1>
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item " aria-current="page">
+            <a class="btn btn-default" href="~/Solicitudes/Create">Crear nueva Solicitud</a>
+        </li>
+    </ol>
+</nav>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.Nombre_Solicitante)*@
+                Nombre del Solicitante
+            </th>
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.Cedula_Solicitante)*@
+                Cedula
+            </th>
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.Telefono_Solicitante)*@
+                Telefono
+            </th>
+            <th style="width:200px;">
+                @Html.DisplayNameFor(model => model.tasa)
+            </th>
+            <th style="width:200px;">
+                @Html.DisplayNameFor(model => model.monto)
+            </th>
+            <th style="width:200px;">
+                @Html.DisplayNameFor(model => model.plazo)
+            </th>
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.Monto_Cuota)*@
+                Monto de la Cuota
+            </th>
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.Correo_Electronico)*@
+                Correo Electronico
+            </th>
+          
+            <th style="width:200px;"></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre_Solicitante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula_Solicitante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono_Solicitante)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tasa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.monto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.plazo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto_Cuota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo_Electronico)
+            </td>
+          
+            <td>
+
+            <a href="~/Solicitudes/Edit/@item.ID_Solicitud" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
+            <a href="~/Solicitudes/Details/@item.ID_Solicitud" class="btn btn-info "><i class="glyphicon glyphicon-info-sign"></i></a>
+            <a href="~/Solicitudes/Delete/@item.ID_Solicitud" class=" btn btn-danger"><i class=" glyphicon glyphicon-trash"></i></a>
+
+            </td>
+        </tr>
+    }
+
+</table>

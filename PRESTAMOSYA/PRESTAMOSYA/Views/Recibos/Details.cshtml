@@ -1,0 +1,57 @@
+﻿@model PRESTAMOSYA.Models.Recibo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Recibo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Monto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monto)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Tipo_Pago)*@
+            Tipo de Pago
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Pago)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Cliente.Nombre_Cliente)*@
+            Nombre del Cliente 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre_Cliente)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    <a href="~/Recibos/Edit/@Model.ID_Recibo" class="btn btn-default"> Editar</a>
+
+    <nav aria-label="breadcrumb">
+        <a class="btn btn-default" href="~/Recibos/Index">Volver</a>
+    </nav>
+
+</p>

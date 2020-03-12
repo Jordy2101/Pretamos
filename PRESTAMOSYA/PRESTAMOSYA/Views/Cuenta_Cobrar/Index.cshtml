@@ -1,0 +1,69 @@
+﻿@model IEnumerable<PRESTAMOSYA.Models.Cuenta_Cobrar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<div class="jumbotron">
+    <h1 class="display-2"><center>Cuentas por cobrar</center></h1>
+</div>
+
+
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item " aria-current="page">
+            <a class="btn btn-default" href="~/Cuenta_Cobrar/Create">Registrar Cobro</a>
+        </li>
+    </ol>
+</nav>
+
+
+<table class="table">
+    <tr>
+        <th style="width:200px;">
+            @*@Html.DisplayNameFor(model => model.Total_Mora)*@
+            Total de Mora
+        </th>
+        <th style="width:200px;">
+            @*@Html.DisplayNameFor(model => model.Monto_Capital)*@
+            Total de capital
+        </th>
+        <th style="width:200px;">
+            @*@Html.DisplayNameFor(model => model.Monto_Interes)*@
+            Monto del Interes
+        </th>
+        <th style="width:200px;">
+            @*@Html.DisplayNameFor(model => model.Cliente.ID_Cliente)*@
+            Nombre del Cliente 
+        </th>
+        <th style="width:200px;"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Mora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto_Capital)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto_Interes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nombre_Cliente)
+            </td>
+            <td>
+
+                <a href="~/Cuenta_Cobrar/Edit/@item.ID_Cuenta_Cobrar" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
+                <a href="~/Cuenta_Cobrar/Details/@item.ID_Cuenta_Cobrar" class="btn btn-info "><i class="glyphicon glyphicon-info-sign "></i> </a>
+                <a href="~/Cuenta_Cobrar/Delete/@item.ID_Cuenta_Cobrar" class=" btn btn-danger"><i class=" glyphicon glyphicon-trash" </a>
+
+            </td>
+        </tr>
+    }
+
+</table>

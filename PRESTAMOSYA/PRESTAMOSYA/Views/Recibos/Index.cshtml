@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PRESTAMOSYA.Models.Recibo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<div class="jumbotron">
+    <h1 class="display-2"><center>Registro de Recibos</center></h1>
+</div>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item " aria-current="page">
+            <a class="btn btn-default" href="~/Recibos/Create">Crear Recibo</a>
+        </li>
+    </ol>
+</nav>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Monto)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Tipo_Pago)*@
+            Tipo de Pago
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Cliente.Nombre_Cliente)*@
+            Nombre del Cliente
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_Pago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente.Nombre_Cliente)
+            </td>
+            <td>
+   
+                <a href="~/Recibos/Edit/@item.ID_Recibo" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
+                <a href="~/Recibos/Details/@item.ID_Recibo" class="btn btn-info "><i class="glyphicon glyphicon-info-sign "></i> </a>
+                <a href="~/Recibos/Delete/@item.ID_Recibo" class=" btn btn-danger"><i class=" glyphicon glyphicon-trash" </a>
+
+            </td>
+        </tr>
+    }
+
+</table>

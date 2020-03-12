@@ -1,0 +1,58 @@
+﻿@model PRESTAMOSYA.Models.Empleado
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Nombre_Empleado)*@
+            Nombre del Empleado
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_Empleado)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Cedula_Empleado)*@
+            Cedula
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cedula_Empleado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cargo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contraseña)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contraseña)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+
+
+    <a href="~/Empleado/Edit/@Model.ID_Empleado" class="btn btn-default"> Editar</a>
+
+    <nav aria-label="breadcrumb">
+        <a class="btn btn-default" href="~/Empleado/Index">Volver</a>
+    </nav>
+</p>

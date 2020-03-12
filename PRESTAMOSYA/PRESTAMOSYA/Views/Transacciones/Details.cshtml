@@ -1,0 +1,42 @@
+﻿@model PRESTAMOSYA.Models.Transaccion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Transaccion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ID_Cliente)*@
+            Nombre del Cliente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_Cliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Monto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monto)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+
+    <a href="~/Transacciones/Edit/@Model.ID_Transaccion" class="btn btn-default"> Editar</a>
+
+    <nav aria-label="breadcrumb">
+        <a class="btn btn-default" href="~/Transacciones/Index">Volver</a>
+    </nav>
+
+
+</p>

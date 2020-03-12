@@ -1,0 +1,84 @@
+﻿@model PRESTAMOSYA.Models.Pago
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Borrar</h2>
+
+<h3>Estas seguro de borrar esto?</h3>
+<div>
+    <h4>Pago</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.ID_Recibo)*@
+            ID del Recibo
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_Recibo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Monto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Monto)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Tipo_Pago)*@
+            Tipo de Pago
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipo_Pago)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Fecha_Pago)*@
+            Fecha de Pago
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_Pago)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Cliente.Nombre_Cliente)*@
+            Nombre del Cliente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente.Nombre_Cliente)
+        </dd>
+
+        <dt>
+            @*@Html.DisplayNameFor(model => model.Transaccion.ID_Transaccion)*@
+            ID de Transaccion
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transaccion.ID_Transaccion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> 
+        
+        </div>
+
+        <div>
+
+            <nav aria-label="breadcrumb">
+                <a class="btn btn-default" href="~/Pagos/Index">Volver</a>
+                </nav>
+        </div>
+    }
+</div>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PRESTAMOSYA.Models.Transaccion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<br />
+<div class="jumbotron">
+    <h1 class="display-2"><center>Registro de Transacciones</center></h1>
+</div>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item " aria-current="page">
+            <a class="btn btn-default" href="~/Transacciones/Create">Crear nuevo cliente</a>
+        </li>
+    </ol>
+</nav>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:200px;">
+                ID de la Transaccion
+            </th>
+
+            <th style="width:200px;">
+                @*@Html.DisplayNameFor(model => model.ID_Cliente)*@
+                Nombre del Cliente
+            </th>
+
+
+            <th style="width:200px;">
+                @Html.DisplayNameFor(model => model.Monto)
+            </th>
+            <th style="width:200px;"></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Transaccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente.Nombre_Cliente)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Monto)
+        </td>
+        <td>
+
+
+
+            <a href="~/Transacciones/Edit/@item.ID_Transaccion" class="btn btn-success"><i class="glyphicon glyphicon-edit"></i></a>
+            <a href="~/Transacciones/Details/@item.ID_Transaccion" class="btn btn-info "><i class="glyphicon glyphicon-info-sign "></i> </a>
+            <a href="~/Transacciones/Delete/@item.ID_Transaccion" class=" btn btn-danger"><i class=" glyphicon glyphicon-trash"></i> </a>
+
+
+        </td>
+    </tr>
+    }
+
+</table>
